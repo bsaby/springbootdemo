@@ -15,4 +15,13 @@ public class DemoController {
     public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
         return "Test response" + counter.incrementAndGet();
     }
+    
+    @RequestMapping("/test1")
+    public String test() {
+        String result = "";
+        for (String name : System.getProperties().stringPropertyNames()) {
+            result += name + " " + System.getProperty(name) + "\n";
+        }
+        return "Start command:" + result;
+    }
 }
