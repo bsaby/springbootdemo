@@ -40,53 +40,12 @@
     </dependencies>
     <pluginRepositories> 
    
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>com.microsoft.azure</groupId>
-                    <artifactId>azure-webapp-maven-plugin</artifactId>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+    <build>        
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>com.microsoft.azure</groupId>
-                <artifactId>azure-webapp-maven-plugin</artifactId>
-                <version>{latest-version}</version>
-                <configuration>                  
-                    <!-- Applicaton settings -->
-                    <resourceGroup>{your-rg-name}</resourceGroup>
-                    <appName>{your-webapp-name</appName>
-                    <region>westeurope</region>
-                    
-                    <!-- Runtime settings -->                    
-                    <javaVersion>1.8</javaVersion>
-                    <javaWebContainer>tomcat 8.5</javaWebContainer>
-
-                    <deploymentType>jar</deploymentType>
-                    <stopAppDuringDeployment>true</stopAppDuringDeployment>
-                    <resources>
-                        <resource>
-                            <directory>${project.basedir}/target</directory>                            
-                            <includes>
-                                <include>*.jar</include>
-                            </includes>
-                        </resource>                      
-                    </resources>
-                    <appSettings>
-                        <!--JVM OPTIONS -->
-                        <property> 
-                            <name>JAVA_OPTS</name>  
-                            <value>-Dtest=12345</value>
-                        </property> 
-                    </appSettings>
-                </configuration>
-            </plugin>
+            </plugin>           
         </plugins>
     </build>
 </project>
