@@ -58,17 +58,17 @@
                 <groupId>com.microsoft.azure</groupId>
                 <artifactId>azure-webapp-maven-plugin</artifactId>
                 <version>{latest-version}</version>
-                <configuration>
-                    <deploymentType>jar</deploymentType>
-                    <authentication>
-                        <serverId>azure-auth</serverId>
-                    </authentication>
+                <configuration>                  
+                    <!-- Applicaton settings -->
                     <resourceGroup>{your-rg-name}</resourceGroup>
                     <appName>{your-webapp-name</appName>
                     <region>westeurope</region>
-
+                    
+                    <!-- Runtime settings -->                    
                     <javaVersion>1.8</javaVersion>
-                     <javaWebContainer>tomcat 8.5</javaWebContainer>
+                    <javaWebContainer>tomcat 8.5</javaWebContainer>
+
+                    <deploymentType>jar</deploymentType>
                     <stopAppDuringDeployment>true</stopAppDuringDeployment>
                     <resources>
                         <resource>
